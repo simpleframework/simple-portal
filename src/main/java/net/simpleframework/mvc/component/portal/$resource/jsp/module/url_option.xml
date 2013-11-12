@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://simpleframework.net/xsd/default/simple.xsd">
+	<components>
+
+		<propEditor name="urlOptionEditor" containerId="urlOptionEditor">
+			<field label="#(url_option.0)">
+				<component type="text" name="_url_name"></component>
+			</field>
+		</propEditor>
+	</components>
+</page>

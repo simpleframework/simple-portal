@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://simpleframework.net/xsd/default/simple.xsd">
+  <components>
+    <propEditor name="weatherOptionEditor" containerId="weatherOptionEditor">
+      <field label="城市代码">
+        <component type="textButton" name="_weather_code">
+          <event name="click">$Actions['cityDict']();</event>
+        </component>
+        <component type="div"
+          style="text-align:right;margin-top: 5px;margin-right: 5px;">
+          <defaultValue>
+            <![CDATA[
+            <a href="http://weather.yahoo.com/china/" target="_blank">查找更多</a>
+            ]]>
+          </defaultValue>
+        </component>
+      </field>
+    </propEditor>
+    <tree name="cityTree">
+      <treenode text="北京市" id="CHXX0008" />
+      <treenode text="上海市" id="CHXX0116" />
+      <treenode text="天津市" id="CHXX0133" />
+      <treenode text="重庆市" id="CHXX0017" />
+      <treenode text="安徽省">
+        <treenode text="安庆" id="CHXX0452" />
+        <treenode text="蚌埠" id="CHXX0444" />
+        <treenode text="合肥" id="CHXX0448" />
+        <treenode text="黄山" id="CHXX0453" />
+      </treenode>
+      <treenode text="福建省">
+        <treenode text="福州" id="CHXX0031" />
+        <treenode text="武夷山" id="CHXX0467" />
+        <treenode text="涵江" id="CHXX0045" />
+        <treenode text="厦门" id="CHXX0140" />
+        <treenode text="旧镇" id="CHXX0070" />
+        <treenode text="永安" id="CHXX0473" />
+        <treenode text="南平" id="CHXX0471" />
+        <treenode text="漳州" id="CHXX0162" />
+        <treenode text="泉州" id="CHXX0114" />
+      </treenode>
+      <treenode text="甘肃省">
+        <treenode text="敦煌" id="CHXX0223" />
+        <treenode text="天水" id="CHXX0386" />
+        <treenode text="酒泉" id="CHXX0226" />
+        <treenode text="乌鞘岭" id="CHXX0233" />
+        <treenode text="兰州" id="CHXX0079" />
+        <treenode text="西风镇" id="CHXX0271" />
+        <treenode text="马鬃山" id="CHXX0221" />
+        <treenode text="玉门镇" id="CHXX0224" />
+      </treenode>
+      <treenode text="广东省">
+        <treenode text="佛山" id="CHXX0028" />
+        <treenode text="汕头" id="CHXX0493" />
+        <treenode text="广州" id="CHXX0037" />
+        <treenode text="韶关" id="CHXX0482" />
+        <treenode text="河源" id="CHXX0492" />
+        <treenode text="深圳" id="CHXX0120" />
+        <treenode text="惠州" id="CHXX0053" />
+        <treenode text="信宜" id="CHXX0495" />
+        <treenode text="连县" id="CHXX0481" />
+        <treenode text="阳江" id="CHXX0500" />
+        <treenode text="梅县" id="CHXX0486" />
+        <treenode text="湛江" id="CHXX0163" />
+      </treenode>
+      <treenode text="广西省">
+        <treenode text="北海" id="CHXX0499" />
+        <treenode text="桂林" id="CHXX0434" />
+        <treenode text="柳州" id="CHXX0479" />
+        <treenode text="南宁" id="CHXX0100" />
+        <treenode text="梧州" id="CHXX0490" />
+      </treenode>
+      <treenode text="贵州省">
+        <treenode text="安顺" id="CHXX0005" />
+        <treenode text="贵阳" id="CHXX0039" />
+      </treenode>
+      <treenode text="海南省">
+        <treenode text="海口" id="CHXX0502" />
+        <treenode text="琼海" id="CHXX0506" />
+      </treenode>
+      <treenode text="河北省">
+        <treenode text="保定" id="CHXX0308" />
+        <treenode text="承德" id="CHXX0302" />
+        <treenode text="石家庄" id="CHXX0122" />
+        <treenode text="唐山" id="CHXX0131" />
+        <treenode text="张家口" id="CHXX0300" />
+      </treenode>
+      <treenode text="黑龙江省">
+        <treenode text="哈尔滨" id="CHXX0046" />
+        <treenode text="漠河" id="CHXX0171" />
+        <treenode text="牡丹江" id="CHXX0278" />
+        <treenode text="嫩江" id="CHXX0177" />
+      </treenode>
+      <treenode text="河南省">
+        <treenode text="安阳" id="CHXX0269" />
+        <treenode text="新乡" id="CHXX0148" />
+        <treenode text="开封" id="CHXX0072" />
+        <treenode text="信阳" id="CHXX0149" />
+        <treenode text="洛阳" id="CHXX0086" />
+        <treenode text="郑州" id="CHXX0165" />
+      </treenode>
+      <treenode text="湖北省">
+        <treenode text="广华" id="CHXX0396" />
+        <treenode text="江陵" id="CHXX0408" />
+        <treenode text="武汉" id="CHXX0138" />
+        <treenode text="宜昌" id="CHXX0407" />
+      </treenode>
+      <treenode text="湖南省">
+        <treenode text="常德" id="CHXX0302" />
+        <treenode text="湘潭" id="CHXX0142" />
+        <treenode text="长沙" id="CHXX0013" />
+        <treenode text="岳阳" id="CHXX0411" />
+        <treenode text="南岳" id="CHXX0423" />
+        <treenode text="浏阳" id="CHXX0083" />
+        <treenode text="桑植" id="CHXX0410" />
+      </treenode>
+      <treenode text="江苏省">
+        <treenode text="常州" id="CHXX0015" />
+        <treenode text="南京" id="CHXX0099" />
+        <treenode text="南通" id="CHXX0101" />
+        <treenode text="徐州" id="CHXX0437" />
+        <treenode text="镇江" id="CHXX0166" />
+      </treenode>
+      <treenode text="江西省">
+        <treenode text="赣州" id="CHXX0436" />
+        <treenode text="九江" id="CHXX0068" />
+        <treenode text="广昌" id="CHXX0470" />
+        <treenode text="庐山" id="CHXX0456" />
+        <treenode text="景德镇" id="CHXX0457" />
+        <treenode text="南昌" id="CHXX0097" />
+      </treenode>
+      <treenode text="吉林省">
+        <treenode text="长白" id="CHXX0299" />
+        <treenode text="吉林市" id="CHXX0063" />
+        <treenode text="长春" id="CHXX0010" />
+        <treenode text="临江" id="CHXX0297" />
+        <treenode text="长岭" id="CHXX0277" />
+        <treenode text="延吉" id="CHXX0291" />
+      </treenode>
+      <treenode text="辽宁省">
+        <treenode text="鞍山" id="CHXX0004" />
+        <treenode text="抚顺" id="CHXX0029" />
+        <treenode text="本溪" id="CHXX0296" />
+        <treenode text="锦州" id="CHXX0067" />
+        <treenode text="朝阳" id="CHXX0294" />
+        <treenode text="牛庄" id="CHXX0105" />
+        <treenode text="大连" id="CHXX0019" />
+        <treenode text="沈阳" id="CHXX0119" />
+        <treenode text="丹东" id="CHXX0306" />
+        <treenode text="营口" id="CHXX0304" />
+      </treenode>
+      <treenode text="内蒙古自治区">
+        <treenode text="百灵庙" id="CHXX0247" />
+        <treenode text="赤峰" id="CHXX0286" />
+        <treenode text="集宁" id="CHXX0250" />
+        <treenode text="林东" id="CHXX0276" />
+      </treenode>
+      <treenode text="宁夏回族自治区">
+        <treenode text="盐池" id="CHXX0263" />
+        <treenode text="银川" id="CHXX0259" />
+        <treenode text="永宁" id="CHXX0158" />
+      </treenode>
+      <treenode text="青海省">
+        <treenode text="河南" id="CHXX0337" />
+        <treenode text="西宁" id="CHXX0236" />
+      </treenode>
+      <treenode text="山西省">
+        <treenode text="大同" id="CHXX0251" />
+        <treenode text="五台山" id="CHXX0257" />
+        <treenode text="河曲" id="CHXX0256" />
+        <treenode text="阳城" id="CHXX0273" />
+        <treenode text="太原" id="CHXX0129" />
+        <treenode text="阳泉" id="CHXX0152" />
+      </treenode>
+      <treenode text="陕西省">
+        <treenode text="安康" id="CHXX0394" />
+        <treenode text="临潼" id="CHXX0082" />
+        <treenode text="汉中" id="CHXX0390" />
+        <treenode text="西安" id="CHXX0141" />
+        <treenode text="华山" id="CHXX0388" />
+        <treenode text="咸阳" id="CHXX0143" />
+      </treenode>
+      <treenode text="山东省">
+        <treenode text="济南" id="CHXX0064" />
+        <treenode text="胶县" id="CHXX0061" />
+        <treenode text="青岛" id="CHXX0110" />
+        <treenode text="泰山" id="CHXX0316" />
+      </treenode>
+      <treenode text="四川省">
+        <treenode text="巴塘" id="CHXX0352" />
+        <treenode text="康定" id="CHXX0358" />
+        <treenode text="成都" id="CHXX0016" />
+        <treenode text="绵阳" id="CHXX0351" />
+        <treenode text="峨嵋山" id="CHXX0359" />
+        <treenode text="宜宾" id="CHXX0362" />
+        <treenode text="广安" id="CHXX0036" />
+        <treenode text="泸州" id="CHXX0088" />
+        <treenode text="华阳" id="CHXX0052" />
+      </treenode>
+      <treenode text="台湾省">
+        <treenode text="淡水" id="TWXX0024" />
+        <treenode text="台南" id="TWXX0020" />
+        <treenode text="丰原" id="TWXX0007" />
+        <treenode text="台中" id="TWXX0019" />
+        <treenode text="高雄" id="TWXX0013" />
+        <treenode text="桃园" id="TWXX0025" />
+        <treenode text="恒春" id="TWXX0008" />
+        <treenode text="新店" id="TWXX0010" />
+        <treenode text="花连" id="TWXX0011" />
+        <treenode text="新竹" id="TWXX0009" />
+        <treenode text="基隆" id="TWXX0003" />
+        <treenode text="彰化" id="TWXX0001" />
+        <treenode text="嘉义" id="TWXX0002" />
+        <treenode text="竹东" id="TWXX0006" />
+        <treenode text="苗栗" id="TWXX0014" />
+        <treenode text="CHINGMEI" id="TWXX0004" />
+        <treenode text="屏东" id="TWXX0015" />
+        <treenode text="HENGCHUN" id="TWXX0027" />
+        <treenode text="旗山" id="TWXX0005" />
+        <treenode text="KANGSHAN" id="TWXX0012" />
+        <treenode text="苏澳" id="TWXX0016" />
+        <treenode text="TA-CHO-SHUI" id="TWXX0017" />
+        <treenode text="台北" id="TWXX0021" />
+        <treenode text="TA-FAN-LIEH" id="TWXX0018" />
+        <treenode text="台北县" id="TWXX0022" />
+        <treenode text="TA-WU" id="TWXX0026" />
+        <treenode text="台东" id="TWXX0023" />
+      </treenode>
+      <treenode text="新疆维吾尔自治区">
+        <treenode text="哈巴河" id="CHXX0195" />
+        <treenode text="皮山" id="CHXX0215" />
+        <treenode text="哈密" id="CHXX0219" />
+        <treenode text="乌鲁木齐" id="CHXX0135" />
+        <treenode text="喀什" id="CHXX0074" />
+        <treenode text="乌苏" id="CHXX0136" />
+        <treenode text="米泉" id="CHXX0195" />
+        <treenode text="伊宁" id="CHXX0203" />
+      </treenode>
+      <treenode text="西藏自治区">
+        <treenode text="拉萨" id="CHXX0080" />
+      </treenode>
+      <treenode text="云南省">
+        <treenode text="保山" id="CHXX0370" />
+        <treenode text="昆明" id="CHXX0076" />
+        <treenode text="大理" id="CHXX0371" />
+        <treenode text="思茅" id="CHXX0381" />
+        <treenode text="广南" id="CHXX0477" />
+        <treenode text="元江" id="CHXX0382" />
+      </treenode>
+      <treenode text="浙江省">
+        <treenode text="杭州" id="CHXX0044" />
+        <treenode text="湖州" id="CHXX0056" />
+        <treenode text="嘉兴" id="CHXX0062" />
+        <treenode text="绍兴" id="CHXX0117" />
+        <treenode text="温州" id="CHXX0462" />
+      </treenode>
+      <treenode text="香港特别行政区" id="CHXX0049" />
+      <treenode text="澳门特别行政区" id="CHXX9911" />
+    </tree>
+    <dictionary name="cityDict" bindingId="_weather_code" title="Yahoo城市代码">
+      <tree ref="cityTree" />
+      <jsSelectCallback>
+        <![CDATA[
+          if (selects.length > 0 && !selects[0].branch.hasChildren()) {
+            $('_weather_code').value = selects[0].id;
+            return true;
+          } 
+        ]]>
+      </jsSelectCallback>
+    </dictionary>
+  </components>
+</page>

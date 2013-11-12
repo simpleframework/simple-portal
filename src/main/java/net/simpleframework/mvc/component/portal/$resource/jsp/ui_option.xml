@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://simpleframework.net/xsd/default/simple.xsd">
+	<scriptEval>single</scriptEval>
+	<handleClass>
+		net.simpleframework.mvc.component.portal.PortalEditPageLoad
+	</handleClass>
+	<handleMethod>uiOptionLoaded</handleMethod>
+
+	<jsLoadedCallback>
+    <![CDATA[
+    	if (!json) { return; }
+    	var binding = json.dataBinding;
+      var v = binding['ui_options_icon'];
+      if (v) {
+        $('ui_options_icon').value = v;
+        $('d_ui_options_icon').setStyle(
+          "background-image:url(" + binding['__homepath'] + v + ")");
+        delete binding['ui_options_icon'];
+        delete binding['__homepath'];
+      }
+      $Actions.valueBinding(binding);
+    ]]>
+  </jsLoadedCallback>
+
+	<components>
+		<ajaxRequest name="ajaxUIOptionSave" handleMethod="uiOptionSave" selector="#_optionsEditor"
+			handleClass="net.simpleframework.mvc.component.portal.PortalAction">
+			<jsCompleteCallback>
+        <![CDATA[
+          var li = $(json["li"]);
+          li.down(".titlebar").update(json["ui_title"]);
+          li.down(".content").setStyle(json["ui_c_style"]);
+          _lo_setPageletFontStyle(li, json["ui_c_fontstyle"], true);
+          $Actions['layoutUIOptionWindow'].close();
+        ]]>
+      </jsCompleteCallback>
+		</ajaxRequest>
+
+		<ajaxRequest name="ajaxIconsSelect"
+			handleClass="net.simpleframework.mvc.component.portal.PortalAction"
+			handleMethod="urlIconsSelect">
+		</ajaxRequest>
+		<window name="iconsSelect" contentRef="ajaxIconsSelect" height="240" width="340"
+			title="#(portal_ui_option.0)" popup="true" resizable="false" destroyOnClose="false">
+		</window>
+
+		<propEditor name="optionsEditor1" containerId="_optionsEditor1" title="#(portal_ui_option.1)">
+			<field label="#(portal_ui_option.2)">
+				<component name="ui_options_title" type="text"></component>
+			</field>
+			<field label="#(portal_ui_option.3)">
+				<component name="ui_options_link" type="text"></component>
+			</field>
+			<field label="#(portal_ui_option.4)">
+				<component type="hidden" name="ui_options_icon"></component>
+				<component name="d_ui_options_icon" type="div" attributes="className:color_block">
+					<event name="click">$Actions['iconsSelect']();</event>
+				</component>
+				<component type="div" defaultValue="#(portal_ui_option.5)" style="float:left;width:40px;cursor:pointer;">
+					<event name="click">
+            <![CDATA[
+              $('ui_options_icon').clear();
+              $('d_ui_options_icon').setStyle('background-image:none');
+            ]]>
+					</event>
+				</component>
+			</field>
+			<field label="#(portal_ui_option.6)">
+				<component type="textButton" attributes="readonly" name="ui_options_fontstyle">
+					<event name="click">$Actions["dictTitleFont"]();</event>
+				</component>
+			</field>
+			<field label="#(portal_ui_option.7)">
+				<component type="textarea" name="ui_options_desc"></component>
+			</field>
+		</propEditor>
+
+		<propEditor name="optionsEditor2" containerId="_optionsEditor2" title="#(portal_ui_option.8)">
+			<field label="#(portal_ui_option.9)">
+				<component type="textButton" attributes="readonly" name="ui_options_c_fontstyle">
+					<event name="click">$Actions["dictContentFont"]();</event>
+				</component>
+			</field>
+			<field label="#(portal_ui_option.10)">
+				<component type="text" name="ui_options_height"></component>
+			</field>
+			<field label="#(portal_ui_option.11)">
+				<component type="select" name="ui_options_align" defaultValue="#(portal_ui_option.12)"></component>
+			</field>
+			<field label="#(portal_ui_option.13)">
+				<component type="checkbox" name="ui_options_sync" defaultValue="true"></component>
+			</field>
+		</propEditor>
+
+		<validation name="optionsValidation" triggerSelector="#userSave" warnType="insertAfter">
+			<validator selector="#ui_options_height" method="digits">
+			</validator>
+		</validation>
+
+		<dictionary name="dictTitleFont" bindingId="ui_options_fontstyle">
+			<font></font>
+		</dictionary>
+
+		<dictionary name="dictContentFont" bindingId="ui_options_c_fontstyle">
+			<font></font>
+		</dictionary>
+	</components>
+</page>

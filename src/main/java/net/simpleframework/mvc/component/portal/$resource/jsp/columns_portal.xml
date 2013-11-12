@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://simpleframework.net/xsd/default/simple.xsd">
+  <handleClass>net.simpleframework.mvc.component.portal.PortalEditPageLoad</handleClass>
+  <handleMethod>columnSizeLoaded</handleMethod>
+  <jsLoadedCallback>
+    <![CDATA[
+    	if (!json) { return; }
+      $Actions.valueBinding(json.dataBinding, _columnsChange);
+    ]]>
+  </jsLoadedCallback>
+  <components>
+    <propEditor name="columnsLayoutEditor" containerId="columnsLayoutEditor">
+      <field label="#(columns_portal.0)" labelStyle="width:60px;">
+        <component type="select" name="_columns_select" defaultValue="#(columns_portal.1)">
+          <event name="change">_columnsChange(true);</event>
+        </component>
+      </field>
+      <field label="#(columns_portal.2)" labelStyle="width:60px;">
+        <component type="div" style="margin:0px;">
+          <defaultValue>
+            <![CDATA[
+              <input id="_cw1" name="_cw1" type="text" style="width: 35px;" />:<input 
+                id="_cw2" name="_cw2" type="text" style="width: 35px;" />:<input 
+                id="_cw3" name="_cw3" type="text" style="width: 35px;" />:<input 
+                id="_cw4" name="_cw4" type="text" style="width: 35px;" />:<input 
+                id="_cw5" name="_cw5" type="text" style="width: 35px;" />
+              <div style="margin:6px 2px;">#(columns_portal.3)</div>
+            ]]>
+          </defaultValue>
+        </component>
+      </field>
+    </propEditor>
+    <ajaxRequest name="ajaxColumnsLayoutSave" handleMethod="columnSizeSave"
+      selector="#columnsLayoutEditor"
+      handleClass="net.simpleframework.mvc.component.portal.PortalAction">
+      <jsCompleteCallback>
+        <![CDATA[
+          $Actions[json["layout"]].refresh();
+          $Actions['layoutColumnsWindow'].close();
+        ]]>
+      </jsCompleteCallback>
+    </ajaxRequest>
+  </components>
+</page>

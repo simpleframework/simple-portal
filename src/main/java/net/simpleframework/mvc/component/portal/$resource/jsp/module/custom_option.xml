@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://simpleframework.net/xsd/default/simple.xsd">
+	<components>
+		<propEditor name="customOptionEditor" containerId="customOptionEditor">
+			<field label="自定义内容" labelStyle="width:80px;">
+				<component type="textarea" name="_custom_c" attributes="rows:8" />
+			</field>
+		</propEditor>
+	</components>
+</page>

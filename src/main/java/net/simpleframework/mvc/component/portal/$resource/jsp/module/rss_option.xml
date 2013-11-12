@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://simpleframework.net/xsd/default/simple.xsd">
+	<components>
+		<propEditor name="rssOptionEditor" containerId="rssOptionEditor">
+			<field label="#(rss_option.0)">
+				<component type="textButton" name="_rss_url">
+					<event name="click">$Actions["rssDict"]();</event>
+				</component>
+			</field>
+			<field label="#(rss_option.1)">
+				<component type="text" name="_rss_rows"></component>
+			</field>
+			<field label="#(rss_option.2)">
+				<component type="text" name="_rss_times"></component>
+			</field>
+			<field label="#(rss_option.3)">
+				<component type="checkbox" name="_rss_tip" defaultValue="true" attributes="checked"></component>
+			</field>
+		</propEditor>
+		
+		<validation name="rssOptionValidation" triggerSelector="#rssOptionSave"
+			warnType="insertAfter">
+			<validator selector="#_rss_url" method="required" />
+			<validator selector="#_rss_rows, #_rss_times" method="digits" />
+		</validation>
+		
+		<tree name="rssTree" dynamicLoading="true">
+			<treenode text="SINA">
+				<treenode text="新闻中心">
+					<treenode text="新闻要闻" id="http://rss.sina.com.cn/news/marquee/ddt.xml" />
+					<treenode text="国内新闻" id="http://rss.sina.com.cn/news/china/focus15.xml" />
+					<treenode text="国际新闻" id="http://rss.sina.com.cn/news/world/focus15.xml" />
+					<treenode text="港澳台新闻" id="http://rss.sina.com.cn/news/china/hktaiwan15.xml" />
+					<treenode text="社会新闻" id="http://rss.sina.com.cn/news/society/focus15.xml" />
+				</treenode>
+				<treenode text="体育新闻">
+					<treenode text="焦点新闻" id="http://rss.sina.com.cn/news/allnews/sports.xml" />
+					<treenode text="国际足坛" id="http://rss.sina.com.cn/sports/global/focus.xml" />
+					<treenode text="国际足坛－意甲" id="http://rss.sina.com.cn/sports/global/italy.xml" />
+					<treenode text="国际足坛－英超" id="http://rss.sina.com.cn/sports/global/england.xml" />
+					<treenode text="国际足坛－西甲" id="http://rss.sina.com.cn/sports/global/spain.xml" />
+					<treenode text="国际足坛－德甲、法甲" id="http://rss.sina.com.cn/sports/global/germanyfrance.xml" />
+					<treenode text="五洲热报" id="http://rss.sina.com.cn/sports/global/others.xml" />
+					<treenode text="精彩图片" id="http://rss.sina.com.cn/sports/global/photo.xml" />
+					<treenode text="国内足坛" id="http://rss.sina.com.cn/sports/china/focus.xml" />
+					<treenode text="国内足坛－中国之队" id="http://rss.sina.com.cn/sports/china/team.xml" />
+					<treenode text="篮球新闻" id="http://rss.sina.com.cn/sports/basketball/focus.xml" />
+					<treenode text="篮球新闻－NBA" id="http://rss.sina.com.cn/sports/basketball/nba.xml" />
+					<treenode text="篮球新闻－CBA" id="http://rss.sina.com.cn/sports/basketball/cba.xml" />
+					<treenode text="综合体育" id="http://rss.sina.com.cn/sports/others/focus.xml" />
+				</treenode>
+				<treenode text="科技新闻">
+					<treenode text="焦点新闻" id="http://rss.sina.com.cn/news/allnews/tech.xml" />
+					<treenode text="滚动新闻" id="http://rss.sina.com.cn/tech/rollnews.xml" />
+					<treenode text="互联网－国际" id="http://rss.sina.com.cn/tech/internet/international28.xml" />
+					<treenode text="互联网－国内" id="http://rss.sina.com.cn/tech/internet/home28.xml" />
+					<treenode text="科技下载" id="http://rss.sina.com.cn/tech/down/down20.xml" />
+					<treenode text="数码相机" id="http://rss.sina.com.cn/tech/digi/dc15.xml" />
+					<treenode text="数码摄像机" id="http://rss.sina.com.cn/tech/digi/dv15.xml" />
+					<treenode text="数字音乐" id="http://rss.sina.com.cn/tech/digi/mp315.xml" />
+					<treenode text="数字家电" id="http://rss.sina.com.cn/tech/digi/tv.xml" />
+					<treenode text="笔记本新品" id="http://rss.sina.com.cn/tech/notebook/193_1.xml" />
+					<treenode text="笔记本评测" id="http://rss.sina.com.cn/tech/notebook/193_2.xml" />
+					<treenode text="笔记本行情" id="http://rss.sina.com.cn/tech/notebook/193_3.xml" />
+					<treenode text="笔记本导购" id="http://rss.sina.com.cn/tech/notebook/193_4.xml" />
+					<treenode text="笔记本知识" id="http://rss.sina.com.cn/tech/notebook/193_5.xml" />
+				</treenode>
+				<treenode text="财经新闻">
+					<treenode text="焦点新闻" id="http://rss.sina.com.cn/news/allnews/finance.xml" />
+					<treenode text="股市及时雨" id="http://rss.sina.com.cn/finance/jsy.xml" />
+					<treenode text="要闻公告" id="http://rss.sina.com.cn/finance/ywgg.xml" />
+					<treenode text="国际财经" id="http://rss.sina.com.cn/finance/gjcj.xml" />
+					<treenode text="国内财经" id="http://rss.sina.com.cn/finance/gncj.xml" />
+					<treenode text="滚动新闻" id="http://rss.sina.com.cn/finance/roll/newindex.xml" />
+				</treenode>
+				<treenode text="军事新闻">
+					<treenode text="焦点新闻" id="http://rss.sina.com.cn/jczs/focus.xml" />
+					<treenode text="军备动态" id="http://rss.sina.com.cn/jczs/col/jbdongtai.xml" />
+					<treenode text="军事新闻" id="http://rss.sina.com.cn/jczs/col/xinwen.xml" />
+					<treenode text="外军新闻" id="http://rss.sina.com.cn/jczs/col/waijun.xml" />
+					<treenode text="台海形势" id="http://rss.sina.com.cn/jczs/col/xingshi.xml" />
+					<treenode text="各国军力" id="http://rss.sina.com.cn/jczs/col/junli.xml" />
+					<treenode text="我军新闻" id="http://rss.sina.com.cn/jczs/china15.xml" />
+					<treenode text="中国军事" id="http://rss.sina.com.cn/jczs/col/junshi.xml" />
+					<treenode text="周边军情" id="http://rss.sina.com.cn/jczs/col/junqing.xml" />
+					<treenode text="武器纵横" id="http://rss.sina.com.cn/jczs/col/zongheng.xml" />
+					<treenode text="战略视角" id="http://rss.sina.com.cn/jczs/col/shijiao.xml" />
+					<treenode text="将军寄语" id="http://rss.sina.com.cn/jczs/col/jiyu.xml" />
+					<treenode text="综合新闻" id="http://rss.sina.com.cn/jczs/col/zonghe.xml" />
+					<treenode text="新闻评述" id="http://rss.sina.com.cn/jczs/col/pingshu.xml" />
+					<treenode text="网友评论精选" id="http://rss.sina.com.cn/jczs/col/jingxuan.xml" />
+				</treenode>
+				<treenode text="女性新闻">
+					<treenode text="焦点新闻" id="http://rss.sina.com.cn/news/allnews/eladies.xml" />
+					<treenode text="婚姻物语" id="http://rss.sina.com.cn/eladies/qinggan/hunyin50.xml" />
+					<treenode text="情感故事" id="http://rss.sina.com.cn/eladies/qinggan/qinggan50.xml" />
+				</treenode>
+				<treenode text="男性新闻">
+					<treenode text="焦点新闻" id="http://rss.sina.com.cn/news/allnews/man.xml" />
+					<treenode text="财富人生" id="http://rss.sina.com.cn/man/col/wealth.xml" />
+				</treenode>
+				<treenode text="汽车新闻">
+					<treenode text="焦点新闻" id="http://rss.sina.com.cn/news/allnews/auto.xml" />
+					<treenode text="车事评论" id="http://rss.sina.com.cn/auto/z/focus/2.xml" />
+					<treenode text="降价信息" id="http://rss.sina.com.cn/auto/z/jiangjiachao/3.xml" />
+					<treenode text="国外新车" id="http://rss.sina.com.cn/auto/z/2002-10newcar/6.xml" />
+					<treenode text="国产新车－业界动态" id="http://rss.sina.com.cn/auto/z/guochanche/1.xml" />
+					<treenode text="国产新车－25万元以上新车一览" id="http://rss.sina.com.cn/auto/z/guochanche/7.xml" />
+					<treenode text="国产新车－20到25万新车一览" id="http://rss.sina.com.cn/auto/z/guochanche/6.xml" />
+					<treenode text="国产新车－15到20万元新车一览" id="http://rss.sina.com.cn/auto/z/guochanche/5.xml" />
+					<treenode text="国产新车－10至15万元新车一览" id="http://rss.sina.com.cn/auto/z/guochanche/4.xml" />
+					<treenode text="国产新车－10万元以内新车一览" id="http://rss.sina.com.cn/auto/z/guochanche/3.xml" />
+				</treenode>
+				<treenode text="娱乐新闻">
+					<treenode text="焦点新闻" id="http://rss.sina.com.cn/news/allnews/ent.xml" />
+					<treenode text="音乐" id="http://rss.sina.com.cn/ent/music/focus12.xml" />
+					<treenode text="电视前沿" id="http://rss.sina.com.cn/ent/tv/focus7.xml" />
+					<treenode text="电影宝库" id="http://rss.sina.com.cn/ent/film/focus7.xml" />
+					<treenode text="明星全接触" id="http://rss.sina.com.cn/ent/star/focus7.xml" />
+				</treenode>
+				<treenode text="读书新闻">
+					<treenode text="畅销" id="http://rss.sina.com.cn/book/tuijian/sal.xml" />
+					<treenode text="小说" id="http://rss.sina.com.cn/book/tuijian/lit.xml" />
+					<treenode text="时政" id="http://rss.sina.com.cn/book/tuijian/soc.xml" />
+					<treenode text="人物" id="http://rss.sina.com.cn/book/tuijian/cha.xml" />
+					<treenode text="娱乐影视" id="http://rss.sina.com.cn/book/tuijian/ent.xml" />
+					<treenode text="人文历史" id="http://rss.sina.com.cn/book/tuijian/his.xml" />
+					<treenode text="生活时尚" id="http://rss.sina.com.cn/book/tuijian/liv.xml" />
+					<treenode text="财经" id="http://rss.sina.com.cn/book/tuijian/fin.xml" />
+					<treenode text="其他" id="http://rss.sina.com.cn/book/tuijian/els.xml" />
+					<treenode text="教育" id="http://rss.sina.com.cn/book/tuijian/edu.xml" />
+					<treenode text="励志" id="http://rss.sina.com.cn/book/tuijian/spi.xml" />
+					<treenode text="两性" id="http://rss.sina.com.cn/book/tuijian/sex.xml" />
+					<treenode text="书业观察" id="http://rss.sina.com.cn/book/observe10.xml" />
+					<treenode text="新书信息" id="http://rss.sina.com.cn/book/newbooks10.xml" />
+					<treenode text="作家动态" id="http://rss.sina.com.cn/book/author10.xml" />
+					<treenode text="文化新闻" id="http://rss.sina.com.cn/book/culture10.xml" />
+				</treenode>
+				<treenode text="文化教育">
+					<treenode text="焦点新闻" id="http://rss.sina.com.cn/edu/focus19.xml" />
+					<treenode text="教育博客" id="http://rss.sina.com.cn/edu/blog.xml" />
+					<treenode text="考试频道" id="http://rss.sina.com.cn/edu/exam.xml" />
+					<treenode text="高考" id="http://rss.sina.com.cn/edu/gaokao.xml" />
+					<treenode text="教育看点" id="http://rss.sina.com.cn/edu/jykd.xml" />
+					<treenode text="青春校园" id="http://rss.sina.com.cn/edu/y.xml" />
+					<treenode text="外语频道" id="http://rss.sina.com.cn/edu/en.xml" />
+					<treenode text="考研" id="http://rss.sina.com.cn/edu/kaoyan.xml" />
+					<treenode text="自考" id="http://rss.sina.com.cn/edu/zikao.xml" />
+					<treenode text="成考" id="http://rss.sina.com.cn/edu/chengkao.xml" />
+					<treenode text="中考" id="http://rss.sina.com.cn/edu/zhongkao.xml" />
+					<treenode text="公务员" id="http://rss.sina.com.cn/edu/gwy.xml" />
+					<treenode text="英语考试" id="http://rss.sina.com.cn/edu/yyks.xml" />
+					<treenode text="资格考试" id="http://rss.sina.com.cn/edu/zgks.xml" />
+					<treenode text="出国留学" id="http://rss.sina.com.cn/edu/abroad5.xml" />
+					<treenode text="招聘信息" id="http://rss.sina.com.cn/edu/zhaopin8.xml" />
+				</treenode>
+				<treenode text="房产新闻">
+					<treenode text="北京房产－每日推荐" id="http://rss.sina.com.cn/bjhouse/tuijian.xml" />
+					<treenode text="北京房产－新盘动态" id="http://rss.sina.com.cn/bjhouse/newhouser12.xml" />
+					<treenode text="海房产－特别关注" id="http://rss.sina.com.cn/shhouse/guanzhu4.xml" />
+					<treenode text="上海房产－申城楼市" id="http://rss.sina.com.cn/shhouse/shencheng13.xml" />
+					<treenode text="深圳房产-新闻荟萃" id="http://gd.news.sina.com.cn/rss/szhouse.xml" />
+					<treenode text="广州房产-新闻荟萃" id="http://gd.news.sina.com.cn/rss/gzhouse.xml" />
+				</treenode>
+				<treenode text="游戏新闻">
+					<treenode text="焦点新闻" id="http://rss.sina.com.cn/news/allnews/games.xml" />
+					<treenode text="网络游戏新闻" id="http://rss.sina.com.cn/games/wlyx.xml" />
+					<treenode text="单机游戏新闻" id="http://rss.sina.com.cn/games/djyx.xml" />
+					<treenode text="游戏产业新闻" id="http://rss.sina.com.cn/games/cyxw.xml" />
+					<treenode text="游戏社会新闻" id="http://rss.sina.com.cn/games/cysh.xml" />
+					<treenode text="游戏硬件新闻" id="http://rss.sina.com.cn/games/yxyj.xml" />
+					<treenode text="电视游戏新闻" id="http://rss.sina.com.cn/games/dsyx.xml" />
+					<treenode text="手机游戏新闻" id="http://rss.sina.com.cn/games/sjyx.xml" />
+					<treenode text="电子竞技新闻" id="http://rss.sina.com.cn/games/eqxw.xml" />
+					<treenode text="招聘信息新闻" id="http://rss.sina.com.cn/games/cyzp.xml" />
+					<treenode text="网游客户端" id="http://rss.sina.com.cn/games/sfxz.xml" />
+					<treenode text="迷你游戏" id="http://rss.sina.com.cn/games/littlegame.xml" />
+					<treenode text="游戏试玩" id="http://rss.sina.com.cn/games/d/demo.xml" />
+					<treenode text="游戏动画" id="http://rss.sina.com.cn/games/d/movie.xml" />
+					<treenode text="壁纸图片" id="http://rss.sina.com.cn/games/d/image.xml" />
+					<treenode text="补丁升级" id="http://rss.sina.com.cn/games/d/updatex.xml" />
+					<treenode text="记录存档" id="http://rss.sina.com.cn/games/d/save.xml" />
+					<treenode text="游戏地图" id="http://rss.sina.com.cn/games/d/map.xml" />
+					<treenode text="编辑修改" id="http://rss.sina.com.cn/games/d/edit.xml" />
+					<treenode text="游戏工具" id="http://rss.sina.com.cn/games/d/tools.xml" />
+					<treenode text="游戏音乐" id="http://rss.sina.com.cn/games/d/music.xml" />
+				</treenode>
+				<treenode text="星座新闻">
+					<treenode text="焦点新闻" id="http://rss.sina.com.cn/news/allnews/astro.xml" />
+				</treenode>
+				<treenode text="广东新闻">
+					<treenode text="深圳房产新闻" id="http://gd.news.sina.com.cn/rss/szhouse.xml" />
+					<treenode text="广州房产新闻" id="http://gd.news.sina.com.cn/rss/gzhouse.xml" />
+					<treenode text="广东社会新闻" id="http://gd.news.sina.com.cn/rss/social.xml" />
+					<treenode text="广东本地新闻" id="http://gd.news.sina.com.cn/rss/local.xml" />
+					<treenode text="广东校园新闻" id="http://gd.news.sina.com.cn/rss/school.xml" />
+					<treenode text="广东生活信息" id="http://gd.news.sina.com.cn/rss/life.xml" />
+				</treenode>
+				<treenode text="新浪周刊">
+					<treenode text="车行天下" id="http://wm.sina.com.cn/rss/sina_magazine_6.xml" />
+					<treenode text="女性周刊" id="http://wm.sina.com.cn/rss/sina_magazine_7.xml" />
+					<treenode text="游戏周刊" id="http://wm.sina.com.cn/rss/sina_magazine_8.xml" />
+					<treenode text="娱乐周刊" id="http://wm.sina.com.cn/rss/sina_magazine_10.xml" />
+					<treenode text="数码周刊" id="http://wm.sina.com.cn/rss/sina_magazine_11.xml" />
+					<treenode text="体育周刊" id="http://wm.sina.com.cn/rss/sina_magazine_13.xml" />
+				</treenode>
+				<treenode text="宽频新闻">
+					<treenode text="新浪DV风暴" id="http://rss.sina.com.cn/bn/dv.xml" />
+					<treenode text="DV新闻" id="http://rss.sina.com.cn/bn/dv/news.xml" />
+					<treenode text="影像大排档" id="http://rss.sina.com.cn/bn/pv.xml" />
+					<treenode text="DV故事" id="http://rss.sina.com.cn/bn/dv/story.xml" />
+					<treenode text="DV剧本展示" id="http://rss.sina.com.cn/bn/dv/script.xml" />
+					<treenode text="DV评论" id="http://rss.sina.com.cn/bn/dv/talk.xml" />
+					<treenode text="DV行情" id="http://rss.sina.com.cn/bn/dv/buy.xml" />
+					<treenode text="DV使用技术" id="http://rss.sina.com.cn/bn/dv/use.xml" />
+					<treenode text="DV人物秀" id="http://rss.sina.com.cn/bn/dv/people.xml" />
+				</treenode>
+			</treenode>
+			<treenode text="读书相关">
+				<treenode text="起点中文原创书库">
+					<treenode text="玄幻奇幻" id="http://tools.cmfu.com/BookRss/cmfuxml/cmfubook1.xml" />
+					<treenode text="武侠仙侠" id="http://tools.cmfu.com/BookRss/cmfuxml/cmfubook2.xml" />
+					<treenode text="浪漫言情" id="http://tools.cmfu.com/BookRss/cmfuxml/cmfubook3.xml" />
+					<treenode text="现代都市" id="http://tools.cmfu.com/BookRss/cmfuxml/cmfubook4.xml" />
+					<treenode text="历史军事" id="http://tools.cmfu.com/BookRss/cmfuxml/cmfubook5.xml" />
+					<treenode text="游戏体育" id="http://tools.cmfu.com/BookRss/cmfuxml/cmfubook6.xml" />
+					<treenode text="科幻灵异" id="http://tools.cmfu.com/BookRss/cmfuxml/cmfubook7.xml" />
+					<treenode text="优美散文" id="http://tools.cmfu.com/BookRss/cmfuxml/cmfubook8.xml" />
+					<treenode text="热门作品" id="http://tools.cmfu.com/BookRss/cmfuxml/cmfubook9.xml" />
+					<treenode text="强力推荐" id="http://tools.cmfu.com/BookRss/cmfuxml/cmfubook10.xml" />
+				</treenode>
+				<treenode text="书香门第图书馆">
+					<treenode text="书香门第图书馆" id="http://www.bookhome.net/rss/zhuanji.xml" />
+				</treenode>
+				<treenode text="清新中文网原创小说">
+					<treenode text="清新中文网原创小说" id="http://www.qxzw.com/rss/rss2.xml" />
+				</treenode>
+			</treenode>
+			<treenode text="IT">
+				<treenode text="IT168">
+					<treenode text="软件" id="http://rss.it168.com/txt/22.xml" />
+					<treenode text="产品评论" id="http://rss.it168.com/txt/pinglun.xml" />
+					<treenode text="促销信息" id="http://rss.it168.com/txt/cuxiao.xml" />
+				</treenode>
+				<treenode text="P2P中国">
+					<treenode text="P2P新闻" id="http://www.ppcn.net/rssFeed.aspx?cid=1" />
+					<treenode text="P2P技术" id="http://www.ppcn.net/rssFeed.aspx?cid=2" />
+				</treenode>
+				<treenode text="微软">
+					<treenode text="TechNet 安全信息更新"
+						id="http://www.microsoft.com/china/technet/abouttn/rss/security.xml" />
+					<treenode text="TechNet 中文网络广播"
+						id="http://www.microsoft.com/china/technet/abouttn/rss/webcasts.xml" />
+					<treenode text="TechNet 解决方案更新"
+						id="http://www.microsoft.com/china/technet/abouttn/rss/itsolutions.xml" />
+					<treenode text="TechNet 专栏文章更新"
+						id="http://www.microsoft.com/china/technet/abouttn/rss/columns.xml" />
+					<treenode text="TechNet 产品技术更新"
+						id="http://www.microsoft.com/china/technet/abouttn/rss/prodtechnol.xml" />
+				</treenode>
+				<treenode text="计算机世界">
+					<treenode text="今日要闻" id="http://www.ccw.com.cn/rss/news2/2.xml" />
+					<treenode text="信息安全" id="http://www.ccw.com.cn/rss/news2/11.xml" />
+					<treenode text="硬件新闻" id="http://www.ccw.com.cn/rss/news2/16.xml" />
+					<treenode text="软件新闻" id="http://www.ccw.com.cn/rss/news2/15.xml" />
+					<treenode text="游戏新闻" id="http://www.ccw.com.cn/rss/news2/26.xml" />
+				</treenode>
+				<treenode text="天极网">
+					<treenode text="新闻总线" id="http://rss.chinabyte.com/216454257090494464.xml" />
+					<treenode text="Myhard" id="http://rss.yesky.com/360287970189639680.xml" />
+					<treenode text="软件" id="http://rss.yesky.com/72339069014638592.xml" />
+					<treenode text="游戏" id="http://rss.yesky.com/73183493944770560.xml" />
+					<treenode text="E时代" id="http://rss.yesky.com/74872343805034496.xml" />
+				</treenode>
+			</treenode>
+			<treenode text="下载">
+				<treenode text="BT下载">
+					<treenode text="电影BT" id="http://www.ttbt.cn/rss/n5.xml" />
+					<treenode text="综艺(体育)BT" id="http://www.ttbt.cn/rss/n6.xml" />
+					<treenode text="动漫BT" id="http://www.ttbt.cn/rss/n2.xml" />
+					<treenode text="电视BT" id="http://www.ttbt.cn/rss/n8.xml" />
+					<treenode text="软件BT" id="http://www.ttbt.cn/rss/n3.xml" />
+					<treenode text="游戏BT" id="http://www.ttbt.cn/rss/n4.xml" />
+				</treenode>
+				<treenode text="eNet软件下载">
+					<treenode text="热点推荐免费软件" id="http://download.enet.com.cn/includes/autohtml/rss_1.xml" />
+					<treenode text="精彩游戏" id="http://download.enet.com.cn/includes/autohtml/rss_2.xml" />
+					<treenode text="linux软件" id="http://download.enet.com.cn/includes/autohtml/rss_6.xml" />
+					<treenode text="PDA &amp; 手机软件" id="http://download.enet.com.cn/includes/autohtml/rss_8.xml" />
+					<treenode text="掌上设备娱乐中心" id="http://download.enet.com.cn/includes/autohtml/rss_9.xml" />
+					<treenode text="中国原创软件力量" id="http://download.enet.com.cn/includes/autohtml/rss_blog.xml" />
+				</treenode>
+				<treenode text="下载信息综合">
+					<treenode text="新浪下载中心" id="http://rss.sina.com.cn/tech/down/down20.xml" />
+					<treenode text="网易下载" id="http://dl.163.com/rss/rss.xml" />
+					<treenode text="P2P中国软件下载" id="http://www.ppcn.net/rssFeed.aspx?cid=3" />
+					<treenode text="先锋软件新闻" id="http://www.pcpchina.com/klip/pcpnews_software.xml" />
+					<treenode text="先锋驱动新闻" id="http://www.pcpchina.com/klip/pcpnews_drivers.xml" />
+					<treenode text="PCWorld.com - Most Popular Downloads of the Week" id="http://rss.pcworld.com/rss/downloads.rss?period=week" />
+					<treenode text="伊甸园BT下载区" id="http://bt.ydy.com/rss.php" />
+					<treenode text="MajorGeeks.com" id="http://www.majorgeeks.com/backend.php?id=120" />
+					<treenode text="西行资讯" id="http://www.appbeta.com/rss2.php" />
+					<treenode text="天极下载" id="http://rss.yesky.com/mydown/index.xml" />
+				</treenode>
+			</treenode>
+			<treenode text="论坛、博客">
+				<treenode text="365Key天天网摘">
+					<treenode text="天天网摘" id="http://www.365key.com/rss.xml" />
+				</treenode>
+				<treenode text="敏思博客">
+					<treenode text="敏思推荐(精彩日志)" id="http://www.blogms.com/blogpath/imgpath/RssBestLog.xml" />
+					<treenode text="敏思周刊(原创)" id="http://www.blogms.com/blogpath/imgpath/RssMagLog.xml" />
+					<treenode text="记事(原创)" id="http://www.blogms.com/blogpath/imgpath/RssNewLog1000.xml" />
+					<treenode text="记人(原创)" id="http://www.blogms.com/blogpath/imgpath/RssNewLog1003.xml" />
+					<treenode text="记情(原创)" id="http://www.blogms.com/blogpath/imgpath/RssNewLog1005.xml" />
+					<treenode text="思考和言论(原创)" id="http://www.blogms.com/blogpath/imgpath/RssNewLog1006.xml" />
+					<treenode text="文学创作(原创)" id="http://www.blogms.com/blogpath/imgpath/RssNewLog1007.xml" />
+					<treenode text="超级娱乐" id="http://www.blogms.com/blogpath/imgpath/RssNewLog1008.xml" />
+				</treenode>
+				<treenode text="大洋论坛">
+					<treenode text="大洋视点" id="http://rss.dayoo.com/club/viewpoint.xml" />
+					<treenode text="原创公园" id="http://rss.dayoo.com/club/manuscript.xml" />
+					<treenode text="情感小屋" id="http://rss.dayoo.com/club/sensibility.xml" />
+					<treenode text="体育沙龙" id="http://rss.dayoo.com/club/sports.xml" />
+					<treenode text="交朋识友" id="http://rss.dayoo.com/club/friend.xml" />
+					<treenode text="数码影像" id="http://rss.dayoo.com/club/photo.xml" />
+					<treenode text="美食休闲" id="http://rss.dayoo.com/club/cate.xml" />
+					<treenode text="汽车论坛" id="http://rss.dayoo.com/club/auto.xml" />
+					<treenode text="开心E族" id="http://rss.dayoo.com/club/fun.xml" />
+				</treenode>
+				<treenode text="猫扑 mop">
+					<treenode text="精彩好贴" id="http://dzh.mop.com/static/good.xml" />
+					<treenode text="网络文学" id="http://dzh.mop.com/static/good1.xml" />
+					<treenode text="美眉靓照" id="http://dzh.mop.com/static/good2.xml" />
+					<treenode text="摄影爱好" id="http://dzh.mop.com/static/good3.xml" />
+					<treenode text="绿茵球场" id="http://dzh.mop.com/static/good4.xml" />
+					<treenode text="可爱宠物" id="http://dzh.mop.com/static/good5.xml" />
+					<treenode text="饕餮美食" id="http://dzh.mop.com/static/good8.xml" />
+					<treenode text="旅游" id="http://dzh.mop.com/topic/rss.jsp?type=17" />
+					<treenode text="美容" id="http://dzh.mop.com/topic/rss.jsp?type=12" />
+					<treenode text="影视" id="http://dzh.mop.com/topic/rss.jsp?type=28" />
+					<treenode text="灵异" id="http://dzh.mop.com/topic/rss.jsp?type=6" />
+					<treenode text="健康" id="http://dzh.mop.com/topic/rss.jsp?type=43" />
+				</treenode>
+			</treenode>
+		</tree>
+		
+		<dictionary name="rssDict" title="#(rss_option.4)">
+			<tree ref="rssTree" />
+			<jsSelectCallback>
+        <![CDATA[
+          if (selects.length > 0 && !selects[0].branch.hasChildren()) {
+            $('_rss_url').value = selects[0].id;
+            return true;
+          } 
+        ]]>
+      </jsSelectCallback>
+		</dictionary>
+	</components>
+</page>

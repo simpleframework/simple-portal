@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://simpleframework.net/xsd/default/simple.xsd">
+  <components>
+    <ajaxRequest name="ajaxRssContent">
+      <urlForward>rss_all.jsp</urlForward>
+    </ajaxRequest>
+    <window name="rssContentWindow" contentRef="ajaxRssContent" height="540" width="800"
+      modal="false" maximize="true" minimize="true">
+    </window>
+
+    <tooltip name="ajaxRssTooltip">
+      <tip hideOthers="true" hideAfter="0.5" delay="0.5" stem="rightTop" width="280">
+        <hook target="leftTop" tip="rightTop" />
+        <hideOn tipElement="tip" event="mouseleave" />
+      </tip>
+    </tooltip>
+  </components>
+</page>
