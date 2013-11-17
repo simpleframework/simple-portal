@@ -36,7 +36,7 @@ import net.simpleframework.mvc.component.portal.module.PortalModuleRegistryFacto
  * @author 陈侃(cknet@126.com, 13910090885) https://github.com/simpleframework
  *         http://www.simpleframework.net
  */
-public abstract class PortalUtils implements HtmlConst, IMVCContextVar {
+public abstract class PortalUtils implements IMVCContextVar {
 	static Log log = LogFactory.getLogger(PortalUtils.class);
 
 	static Collection<ColumnBean> getColumns(final ComponentParameter cp) {
@@ -189,7 +189,7 @@ public abstract class PortalUtils implements HtmlConst, IMVCContextVar {
 				}
 			}
 		}
-		titleValue = StringUtils.text(titleValue, NBSP);
+		titleValue = StringUtils.text(titleValue, HtmlConst.NBSP);
 		final StringBuilder sb = new StringBuilder();
 		if (pageletTitle != null) {
 			final String id = pagelet.id();
