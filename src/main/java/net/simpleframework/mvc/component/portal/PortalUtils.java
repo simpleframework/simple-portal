@@ -13,7 +13,6 @@ import net.simpleframework.common.StringUtils;
 import net.simpleframework.common.logger.Log;
 import net.simpleframework.common.logger.LogFactory;
 import net.simpleframework.common.web.HttpUtils;
-import net.simpleframework.common.web.UserAgentParser;
 import net.simpleframework.common.web.html.HtmlConst;
 import net.simpleframework.common.web.html.HtmlUtils;
 import net.simpleframework.mvc.IForward;
@@ -234,8 +233,8 @@ public abstract class PortalUtils implements IMVCContextVar {
 	private static String wrapRound(final ComponentParameter cp, final String s) {
 		final StringBuilder sb = new StringBuilder();
 		sb.append("<div class=\"jbox\">");
-		final UserAgentParser parser = cp.getUserAgentParser();
-		final boolean j = parser.isIE() && parser.getBrowserFloatVersion() == 8.0;
+		final Float ver = cp.getIEVersion();
+		final boolean j = ver != null && ver == 8.0;
 		if (j) {
 			sb.append("<div class=\"j1\"></div><div class=\"j2\"></div>");
 		}
