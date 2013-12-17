@@ -1,7 +1,6 @@
 package net.simpleframework.mvc.component.portal;
 
 import net.simpleframework.mvc.PageParameter;
-import net.simpleframework.mvc.component.IComponentRegistry;
 import net.simpleframework.mvc.component.IComponentResourceProvider.AbstractComponentResourceProvider;
 import net.simpleframework.mvc.impl.DefaultPageResourceProvider;
 
@@ -12,9 +11,6 @@ import net.simpleframework.mvc.impl.DefaultPageResourceProvider;
  *         http://www.simpleframework.net
  */
 public class PortalResourceProvider extends AbstractComponentResourceProvider {
-	public PortalResourceProvider(final IComponentRegistry componentRegistry) {
-		super(componentRegistry);
-	}
 
 	@Override
 	public String[] getJavascriptPath(final PageParameter pp) {
