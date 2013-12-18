@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.simpleframework.common.StringUtils;
-import net.simpleframework.ctx.common.xml.XmlElement;
-import net.simpleframework.mvc.PageDocument;
 import net.simpleframework.mvc.component.AbstractContainerBean;
 import net.simpleframework.mvc.component.portal.module.PortalModuleRegistryFactory;
 
@@ -26,15 +24,6 @@ public class PortalBean extends AbstractContainerBean {
 	private String autoPagelet = PortalModuleRegistryFactory.DEFAULT_MODULE_NAME;
 
 	private String roleManager;
-
-	public PortalBean(final PageDocument pageDocument, final XmlElement xmlElement) {
-		super(pageDocument, xmlElement);
-		setHandleClass(DefaultPortalHandler.class);
-	}
-
-	public PortalBean(final PageDocument pageDocument) {
-		this(pageDocument, null);
-	}
 
 	public List<ColumnBean> getColumns() {
 		if (columns == null) {
@@ -85,5 +74,9 @@ public class PortalBean extends AbstractContainerBean {
 
 	public void setRoleManager(final String roleManager) {
 		this.roleManager = roleManager;
+	}
+
+	{
+		setHandleClass(DefaultPortalHandler.class);
 	}
 }
