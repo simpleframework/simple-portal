@@ -35,7 +35,7 @@ public class PortalPageLoad extends DefaultPageHandler {
 		final StringBuilder js = new StringBuilder();
 		js.append("var li = $(json['li']);");
 		js.append("if (!li) return;");
-		js.append("new $UI.AjaxRequest(li.down('.content'), json['text'], json['ajaxRequestId']);");
+		js.append("new $UI.AjaxRequest(li.down('.content'), json['text'], json['ajaxRequestId'], false, true);");
 		js.append("_lo_setPageletFontStyle(li, json['fontStyle']);");
 		pp.addComponentBean("layoutContent", AjaxRequestBean.class).setParallel(true)
 				.setDisabledTriggerAction(false).setJsCompleteCallback(js.toString())
