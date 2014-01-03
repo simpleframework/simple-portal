@@ -12,6 +12,7 @@ import net.simpleframework.common.StringUtils;
 import net.simpleframework.common.web.html.HtmlUtils;
 import net.simpleframework.ctx.common.xml.XmlElement;
 import net.simpleframework.mvc.IForward;
+import net.simpleframework.mvc.JavascriptForward;
 import net.simpleframework.mvc.JsonForward;
 import net.simpleframework.mvc.UrlForward;
 import net.simpleframework.mvc.common.element.ETextAlign;
@@ -159,10 +160,9 @@ public class PortalAction extends DefaultAjaxRequestHandler {
 			column.setWidth(nCP.getParameter("_cw" + (i + 1)));
 		}
 
-		final JsonForward json = new JsonForward();
 		PortalUtils.savePortal(nCP, columns);
-		json.put("layout", nCP.getComponentName());
-		return json;
+		return new JavascriptForward("$Actions['").append(nCP.getComponentName()).append(
+				"'].refresh(); $Actions['layoutColumnsWindow'].close();");
 	}
 
 	public IForward positionSave(final ComponentParameter cp) {

@@ -72,7 +72,7 @@ public class PortalEditPageLoad extends DefaultPageHandler {
 			return;
 		}
 		final Collection<ColumnBean> columns = PortalUtils.getColumns(nCP);
-		dataBinding.put("_columns_select", columns.size());
+		dataBinding.put("_columns_select", columns.size() - 1);
 		int i = 1;
 		for (final ColumnBean column : columns) {
 			dataBinding.put("_cw" + i++, column.getWidth());
