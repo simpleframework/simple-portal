@@ -14,9 +14,9 @@ import net.simpleframework.common.BeanUtils;
 import net.simpleframework.common.ClassUtils;
 import net.simpleframework.common.StringUtils;
 import net.simpleframework.common.object.ObjectEx;
+import net.simpleframework.ctx.common.xml.XmlAttri;
 import net.simpleframework.ctx.common.xml.XmlDocument;
 import net.simpleframework.ctx.common.xml.XmlElement;
-import net.simpleframework.ctx.common.xml.XmlElement.Attri;
 import net.simpleframework.mvc.MVCUtils;
 import net.simpleframework.mvc.component.portal.PageletBean;
 
@@ -69,7 +69,7 @@ public class PortalModuleRegistryFactory extends ObjectEx {
 				final PortalModule layoutModule = new PortalModule();
 				final Iterator<?> attris = xmlElement.attributeIterator();
 				while (attris.hasNext()) {
-					final Attri attri = (Attri) attris.next();
+					final XmlAttri attri = (XmlAttri) attris.next();
 					try {
 						final String value = attri.getValue();
 						if (value != null) {
