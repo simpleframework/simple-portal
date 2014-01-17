@@ -61,7 +61,7 @@ function _lo_initPortal(l, actName) {
         }
         li = $(li);
         showPortalTip(li);
-        li.$remove();
+        $Effect.remove(li);
         Event.stop(e);
       });
     }
@@ -164,7 +164,7 @@ function _lo_initPortal(l, actName) {
     d.insert(new Element("div", {
       className : "icon"
     }).observe("click", function() {
-      d.$remove();
+      $Effect.remove(d);
     })).insert(PORTAL_MSG.tip0).insert(
         $UI.createLink(PORTAL_MSG.tip1, null, function() {
           updatePortalColumns(this);
