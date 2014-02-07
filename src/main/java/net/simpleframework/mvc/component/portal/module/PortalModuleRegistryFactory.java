@@ -65,9 +65,9 @@ public class PortalModuleRegistryFactory extends ObjectEx {
 			super(inputStream);
 			final Iterator<?> it = getRoot().elementIterator("module");
 			while (it.hasNext()) {
-				final XmlElement xmlElement = (XmlElement) it.next();
+				final XmlElement element = (XmlElement) it.next();
 				final PortalModule layoutModule = new PortalModule();
-				final Iterator<?> attris = xmlElement.attributeIterator();
+				final Iterator<?> attris = element.attributeIterator();
 				while (attris.hasNext()) {
 					final XmlAttri attri = (XmlAttri) attris.next();
 					try {
@@ -75,7 +75,7 @@ public class PortalModuleRegistryFactory extends ObjectEx {
 						if (value != null) {
 							BeanUtils.setProperty(layoutModule, attri.getName(), value);
 						}
-						final String desc = xmlElement.elementText("description");
+						final String desc = element.elementText("description");
 						if (StringUtils.hasText(desc)) {
 							layoutModule.setDescription(desc);
 						}

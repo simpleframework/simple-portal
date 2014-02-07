@@ -136,20 +136,20 @@ public class PortalAction extends DefaultAjaxRequestHandler {
 		final ArrayList<ColumnBean> columns = new ArrayList<ColumnBean>(PortalUtils.getColumns(nCP));
 		final ArrayList<PageletBean> removes = new ArrayList<PageletBean>();
 		int size;
-		XmlElement xmlElement = null;
+		XmlElement element = null;
 		while ((size = columns.size()) != columnCount) {
 			if (size > columnCount) {
 				final ColumnBean column = columns.remove(size - 1);
 				removes.addAll(column.getPagelets());
 			} else {
-				if (xmlElement == null) {
+				if (element == null) {
 					if (size > 0) {
-						xmlElement = columns.get(0).getBeanElement().getParent().addElement("column");
+						element = columns.get(0).getElement().getParent().addElement("column");
 					} else {
 						// new XmlDocument("");
 					}
 				}
-				columns.add(new ColumnBean(xmlElement, (PortalBean) nCP.componentBean));
+				columns.add(new ColumnBean(element, (PortalBean) nCP.componentBean));
 			}
 		}
 		if (removes.size() > 0) {

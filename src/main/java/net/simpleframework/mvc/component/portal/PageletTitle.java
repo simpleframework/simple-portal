@@ -23,8 +23,8 @@ public class PageletTitle extends AbstractElementBean {
 
 	private String description;
 
-	public PageletTitle(final XmlElement xmlElement, final PageletBean pagelet) {
-		super(xmlElement == null ? pagelet.getBeanElement().addElement("title") : xmlElement);
+	public PageletTitle(final XmlElement element, final PageletBean pagelet) {
+		super(element == null ? pagelet.getElement().addElement("title") : element);
 		this.pagelet = pagelet;
 	}
 

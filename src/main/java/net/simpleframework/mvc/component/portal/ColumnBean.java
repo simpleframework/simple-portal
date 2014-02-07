@@ -21,15 +21,15 @@ public class ColumnBean extends AbstractElementBean {
 
 	private String width;
 
-	public ColumnBean(final XmlElement xmlElement, final PortalBean portalBean) {
-		super(xmlElement == null ? portalBean.getBeanElement().addElement("column") : xmlElement);
+	public ColumnBean(final XmlElement element, final PortalBean portalBean) {
+		super(element == null ? portalBean.getElement().addElement("column") : element);
 		this.portalBean = portalBean;
 	}
 
 	@Override
 	public void syncElement() {
 		super.syncElement();
-		removeChildren("pagelet");
+		getElement().remove("pagelet");
 		for (final PageletBean pagelet : getPagelets()) {
 			pagelet.syncElement();
 			addElement(pagelet);

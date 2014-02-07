@@ -53,7 +53,7 @@ public class PortalBean extends AbstractContainerBean {
 		setElementAttribute("draggable", isDraggable());
 		setElementAttribute("showMenu", isShowMenu());
 		setElementAttribute("autoPagelet", getAutoPagelet());
-		removeChildren("column");
+		getElement().remove("column");
 		for (final ColumnBean column : getColumns()) {
 			column.syncElement();
 			addElement(column);

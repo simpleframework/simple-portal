@@ -44,20 +44,20 @@ public class PortalRegistry extends AbstractComponentRegistry {
 
 	@Override
 	protected void initComponentFromXml(final PageParameter pp,
-			final AbstractComponentBean componentBean, final XmlElement xmlElement) {
-		super.initComponentFromXml(pp, componentBean, xmlElement);
+			final AbstractComponentBean componentBean, final XmlElement element) {
+		super.initComponentFromXml(pp, componentBean, element);
 
 		final PortalBean portalBean = (PortalBean) componentBean;
 		final IScriptEval scriptEval = pp.getScriptEval();
 
 		final List<ColumnBean> cols = portalBean.getColumns();
-		cols.addAll(loadBean(portalBean, scriptEval, xmlElement));
+		cols.addAll(loadBean(portalBean, scriptEval, element));
 	}
 
 	public List<ColumnBean> loadBean(final PortalBean portalBean, final IScriptEval scriptEval,
-			final XmlElement xmlElement) {
+			final XmlElement element) {
 		final ArrayList<ColumnBean> al = new ArrayList<ColumnBean>();
-		final Iterator<?> it = xmlElement.elementIterator("column");
+		final Iterator<?> it = element.elementIterator("column");
 		while (it.hasNext()) {
 			final XmlElement ele = (XmlElement) it.next();
 			final ColumnBean column = new ColumnBean(ele, portalBean);

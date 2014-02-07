@@ -37,8 +37,8 @@ public class PageletBean extends AbstractElementBean {
 
 	private String options;
 
-	public PageletBean(final XmlElement xmlElement, final ColumnBean columnBean) {
-		super(xmlElement == null ? columnBean.getBeanElement().addElement("pagelet") : xmlElement);
+	public PageletBean(final XmlElement element, final ColumnBean columnBean) {
+		super(element == null ? columnBean.getElement().addElement("pagelet") : element);
 		this.columnBean = columnBean;
 	}
 
