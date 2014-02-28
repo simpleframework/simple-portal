@@ -19,7 +19,7 @@ public class PortalModule extends TextNamedObject<PortalModule> {
 
 	private String icon;
 
-	private String handleClass;
+	private String handlerClass;
 
 	private String catalog;
 
@@ -42,12 +42,12 @@ public class PortalModule extends TextNamedObject<PortalModule> {
 		return this;
 	}
 
-	public String getHandleClass() {
-		return handleClass;
+	public String getHandlerClass() {
+		return handlerClass;
 	}
 
-	public PortalModule setHandleClass(final String handleClass) {
-		this.handleClass = handleClass;
+	public PortalModule setHandlerClass(final String handlerClass) {
+		this.handlerClass = handlerClass;
 		return this;
 	}
 

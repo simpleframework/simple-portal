@@ -2,10 +2,10 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://simpleframework.net/xsd/default/simple.xsd">
 	<evalScope>application</evalScope>
-	<handleClass>
+	<handlerClass>
 		net.simpleframework.mvc.component.portal.PortalEditPageLoad
-	</handleClass>
-	<handleMethod>uiOptionLoaded</handleMethod>
+	</handlerClass>
+	<handlerMethod>uiOptionLoaded</handlerMethod>
 
 	<jsLoadedCallback>
     <![CDATA[
@@ -24,8 +24,8 @@
   </jsLoadedCallback>
 
 	<components>
-		<ajaxRequest name="ajaxUIOptionSave" handleMethod="uiOptionSave" selector="#_optionsEditor"
-			handleClass="net.simpleframework.mvc.component.portal.PortalAction">
+		<ajaxRequest name="ajaxUIOptionSave" handlerMethod="uiOptionSave" selector="#_optionsEditor"
+			handlerClass="net.simpleframework.mvc.component.portal.PortalAction">
 			<jsCompleteCallback>
         <![CDATA[
           var li = $(json["li"]);
@@ -38,8 +38,8 @@
 		</ajaxRequest>
 
 		<ajaxRequest name="ajaxIconsSelect"
-			handleClass="net.simpleframework.mvc.component.portal.PortalAction"
-			handleMethod="urlIconsSelect">
+			handlerClass="net.simpleframework.mvc.component.portal.PortalAction"
+			handlerMethod="urlIconsSelect">
 		</ajaxRequest>
 		<window name="iconsSelect" contentRef="ajaxIconsSelect" height="240" width="340"
 			title="#(portal_ui_option.0)" popup="true" resizable="false" destroyOnClose="false">

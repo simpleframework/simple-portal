@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <modules>
   <module name="rss" text="#(portal_module.xml.8)" icon="rss.png"
-    handleClass="net.simpleframework.mvc.component.portal.module.RssModuleHandler" catalog="#(portal_module.xml.5)">
+    handlerClass="net.simpleframework.mvc.component.portal.module.RssModuleHandler" catalog="#(portal_module.xml.5)">
     <description>
       #(portal_module.xml.0)
     </description>
   </module>
   <module name="url" text="#(portal_module.xml.7)" icon="url.png"
-    handleClass="net.simpleframework.mvc.component.portal.module.UrlModuleHandler" catalog="#(portal_module.xml.4)">
+    handlerClass="net.simpleframework.mvc.component.portal.module.UrlModuleHandler" catalog="#(portal_module.xml.4)">
     <description>
       #(portal_module.xml.9)
     </description>
   </module>
   <module name="weather" text="#(portal_module.xml.3)" icon="weather.png"
-    handleClass="net.simpleframework.mvc.component.portal.module.WeatherModuleHandler" catalog="#(portal_module.xml.4)">
+    handlerClass="net.simpleframework.mvc.component.portal.module.WeatherModuleHandler" catalog="#(portal_module.xml.4)">
     <description>
       #(portal_module.xml.1)
     </description>
   </module>
   <module name="custom" text="#(portal_module.xml.6)" icon="custom.png"
-    handleClass="net.simpleframework.mvc.component.portal.module.CustomModuleHandler" catalog="#(portal_module.xml.4)">
+    handlerClass="net.simpleframework.mvc.component.portal.module.CustomModuleHandler" catalog="#(portal_module.xml.4)">
     <description>
       #(portal_module.xml.2)
     </description>

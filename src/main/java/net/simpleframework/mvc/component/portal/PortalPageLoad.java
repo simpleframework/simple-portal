@@ -30,7 +30,7 @@ public class PortalPageLoad extends DefaultPageHandler {
 		final ComponentParameter nCP = PortalUtils.get(pp);
 
 		pp.addComponentBean("ajaxLayout", AjaxRequestBean.class).setDisabledTriggerAction(false)
-				.setHandleMethod("portalRequest").setHandleClass(PortalAction.class);
+				.setHandlerMethod("portalRequest").setHandlerClass(PortalAction.class);
 
 		final StringBuilder js = new StringBuilder();
 		js.append("var li = $(json['li']);");
@@ -39,7 +39,7 @@ public class PortalPageLoad extends DefaultPageHandler {
 		js.append("_lo_setPageletFontStyle(li, json['fontStyle']);");
 		pp.addComponentBean("layoutContent", AjaxRequestBean.class).setParallel(true)
 				.setDisabledTriggerAction(false).setJsCompleteCallback(js.toString())
-				.setHandleMethod("contentRequest").setHandleClass(PortalAction.class);
+				.setHandlerMethod("contentRequest").setHandlerClass(PortalAction.class);
 
 		// title tooltip
 		final TooltipBean tooltip = pp.addComponentBean("layoutTitleTooltip", TooltipBean.class);
@@ -52,15 +52,15 @@ public class PortalPageLoad extends DefaultPageHandler {
 		if (PortalUtils.isManager(nCP)) {
 			pp.addComponentBean("ajaxDraggableSave", AjaxRequestBean.class)
 					.setJsCompleteCallback("$Actions['ajaxDraggableSave'].itemChecked();")
-					.setHandleMethod("draggableSave").setHandleClass(PortalAction.class);
+					.setHandlerMethod("draggableSave").setHandlerClass(PortalAction.class);
 
 			// update layout
 			js.setLength(0);
 			js.append("var f = $Actions['ajaxPositionSave'];");
 			js.append("if (f.portal_tb_tip) f.portal_tb_tip.remove();");
 			pp.addComponentBean("ajaxPositionSave", AjaxRequestBean.class)
-					.setJsCompleteCallback(js.toString()).setHandleMethod("positionSave")
-					.setHandleClass(PortalAction.class);
+					.setJsCompleteCallback(js.toString()).setHandlerMethod("positionSave")
+					.setHandlerClass(PortalAction.class);
 
 			// option window
 			pp.addComponentBean("layoutOptionRequest", AjaxRequestBean.class).setUrlForward(
@@ -74,8 +74,8 @@ public class PortalPageLoad extends DefaultPageHandler {
 			js.append("var t = json['title'];");
 			js.append("if (t) $(win.pagelet).down('.titlebar').update(t);");
 			pp.addComponentBean("layoutOptionSave", AjaxRequestBean.class)
-					.setJsCompleteCallback(js.toString()).setHandleMethod("optionSave")
-					.setHandleClass(PortalAction.class).setSelector("#optionEditorForm");
+					.setJsCompleteCallback(js.toString()).setHandlerMethod("optionSave")
+					.setHandlerClass(PortalAction.class).setSelector("#optionEditorForm");
 
 			// ui option window
 			pp.addComponentBean("layoutUIOptionRequest", AjaxRequestBean.class).setUrlForward(
@@ -85,7 +85,7 @@ public class PortalPageLoad extends DefaultPageHandler {
 					.setWidth(360);
 
 			// module window
-			pp.addComponentBean("layoutModulesTabs", TabsBean.class).setHandleClass(
+			pp.addComponentBean("layoutModulesTabs", TabsBean.class).setHandlerClass(
 					PortalModulesHandler.class);
 			pp.addComponentBean("layoutModulesWindow", WindowBean.class)
 					.setContentRef("layoutModulesTabs").setTitle($m("portal.1")).setHeight(450)
@@ -98,7 +98,7 @@ public class PortalPageLoad extends DefaultPageHandler {
 			js.append("_lo_getPortal(ul).initPagelet(li, json['draggable']);");
 			pp.addComponentBean("addLayoutModule", AjaxRequestBean.class)
 					.setJsCompleteCallback(js.toString()).setConfirmMessage($m("portal_admin.0"))
-					.setHandleMethod("addModule").setHandleClass(PortalAction.class);
+					.setHandlerMethod("addModule").setHandlerClass(PortalAction.class);
 
 			// layout window
 			pp.addComponentBean("layoutColumnsRequest", AjaxRequestBean.class).setUrlForward(

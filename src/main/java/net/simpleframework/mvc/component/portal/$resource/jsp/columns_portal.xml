@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://simpleframework.net/xsd/default/simple.xsd">
-  <handleClass>net.simpleframework.mvc.component.portal.PortalEditPageLoad</handleClass>
-  <handleMethod>columnSizeLoaded</handleMethod>
+  <handlerClass>net.simpleframework.mvc.component.portal.PortalEditPageLoad</handlerClass>
+  <handlerMethod>columnSizeLoaded</handlerMethod>
   <jsLoadedCallback>
     <![CDATA[
     	if (!json) { return; }
@@ -30,8 +30,8 @@
         </component>
       </field>
     </propEditor>
-    <ajaxRequest name="ajaxColumnsLayoutSave" handleMethod="columnSizeSave" selector="#columnsLayoutEditor"
-      handleClass="net.simpleframework.mvc.component.portal.PortalAction">
+    <ajaxRequest name="ajaxColumnsLayoutSave" handlerMethod="columnSizeSave" selector="#columnsLayoutEditor"
+      handlerClass="net.simpleframework.mvc.component.portal.PortalAction">
     </ajaxRequest>
   </components>
 </page>

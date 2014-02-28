@@ -129,7 +129,7 @@ public class PortalModuleRegistryFactory extends ObjectEx {
 			final String name, final String text, final String catalog, final String icon,
 			final String description) {
 		PortalModuleRegistryFactory.get().registered(
-				new PortalModule().setHandleClass(clazz.getName()).setCatalog(catalog).setIcon(icon)
+				new PortalModule().setHandlerClass(clazz.getName()).setCatalog(catalog).setIcon(icon)
 						.setText(text).setName(name).setDescription(description));
 	}
 }

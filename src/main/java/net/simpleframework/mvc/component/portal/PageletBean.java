@@ -156,9 +156,9 @@ public class PageletBean extends AbstractElementBean {
 			if (moduleBean == null) {
 				return null;
 			}
-			final String handleClass = moduleBean.getHandleClass();
-			if (StringUtils.hasText(handleClass)) {
-				layoutModuleHandle = (IPortalModuleHandler) ObjectFactory.create(handleClass);
+			final String handlerClass = moduleBean.getHandlerClass();
+			if (StringUtils.hasText(handlerClass)) {
+				layoutModuleHandle = (IPortalModuleHandler) ObjectFactory.create(handlerClass);
 				layoutModuleHandle.doInit(this);
 			}
 		}

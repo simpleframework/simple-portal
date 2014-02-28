@@ -69,7 +69,7 @@ public class PortalBean extends AbstractContainerBean {
 	}
 
 	public String getRoleManager() {
-		return StringUtils.text(roleManager, settings.getDefaultRole());
+		return StringUtils.hasText(roleManager) ? roleManager : settings.getDefaultRole();
 	}
 
 	public void setRoleManager(final String roleManager) {
@@ -77,6 +77,6 @@ public class PortalBean extends AbstractContainerBean {
 	}
 
 	{
-		setHandleClass(DefaultPortalHandler.class);
+		setHandlerClass(DefaultPortalHandler.class);
 	}
 }
