@@ -17,7 +17,6 @@ import net.simpleframework.common.web.html.HtmlConst;
 import net.simpleframework.common.web.html.HtmlUtils;
 import net.simpleframework.mvc.IForward;
 import net.simpleframework.mvc.IMVCContextVar;
-import net.simpleframework.mvc.MVCContext;
 import net.simpleframework.mvc.PageRequestResponse;
 import net.simpleframework.mvc.UrlForward;
 import net.simpleframework.mvc.common.element.LinkElement;
@@ -52,7 +51,7 @@ public abstract class PortalUtils implements IMVCContextVar {
 
 	static boolean isManager(final ComponentParameter cp) {
 		return (Boolean) cp.getBeanProperty("showMenu")
-				|| MVCContext.permission().getLogin(cp).isMember(cp.getBeanProperty("roleManager"));
+				|| ctx.getPermission().getLogin(cp).isMember(cp.getBeanProperty("roleManager"));
 	}
 
 	public static String renderHtml(final ComponentParameter cp) throws Exception {
