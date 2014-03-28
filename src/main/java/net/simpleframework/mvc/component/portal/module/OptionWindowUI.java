@@ -14,11 +14,9 @@ public class OptionWindowUI {
 	public static OptionWindowUI getOptionWindowUI(final PageletBean pagelet, final String uiString) {
 		final OptionWindowUI optionWindowUI = new OptionWindowUI(pagelet);
 		final String[] arr = StringUtils.split(uiString, ";");
-		if (arr != null) {
-			optionWindowUI.title = arr[0].substring(6);
-			optionWindowUI.height = Convert.toInt(arr[1].substring(7));
-			optionWindowUI.width = Convert.toInt(arr[2].substring(6));
-		}
+		optionWindowUI.title = arr[0].substring(6);
+		optionWindowUI.height = Convert.toInt(arr[1].substring(7));
+		optionWindowUI.width = Convert.toInt(arr[2].substring(6));
 		return optionWindowUI;
 	}
 

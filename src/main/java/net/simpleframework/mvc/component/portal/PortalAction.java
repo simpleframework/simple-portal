@@ -166,24 +166,17 @@ public class PortalAction extends DefaultAjaxRequestHandler {
 	}
 
 	public IForward positionSave(final ComponentParameter cp) {
-		final String[] ulArr = StringUtils.split(cp.getParameter("ul"), "#");
-		if (ulArr == null) {
-			return null;
-		}
 		final ComponentParameter nCP = PortalUtils.get(cp);
 		final ArrayList<ColumnBean> columns = new ArrayList<ColumnBean>();
 		final Map<ColumnBean, Collection<PageletBean>> pagelets = new HashMap<ColumnBean, Collection<PageletBean>>();
-		for (final String ul : ulArr) {
+		for (final String ul : StringUtils.split(cp.getParameter("ul"), "#")) {
 			final ColumnBean column = PortalUtils.getColumnBeanByHashId(nCP, ul);
-			final String[] liArr = StringUtils.split(cp.getParameter(ul), "#");
-			if (liArr != null) {
-				final Collection<PageletBean> coll = new ArrayList<PageletBean>();
-				pagelets.put(column, coll);
-				for (final String li : liArr) {
-					final PageletBean pagelet = PortalUtils.getPageletByHashId(nCP, li);
-					if (pagelet != null) {
-						coll.add(pagelet);
-					}
+			final Collection<PageletBean> coll = new ArrayList<PageletBean>();
+			pagelets.put(column, coll);
+			for (final String li : StringUtils.split(cp.getParameter(ul), "#")) {
+				final PageletBean pagelet = PortalUtils.getPageletByHashId(nCP, li);
+				if (pagelet != null) {
+					coll.add(pagelet);
 				}
 			}
 			columns.add(column);
