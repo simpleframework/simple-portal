@@ -80,7 +80,7 @@ public class PortalModuleRegistryFactory extends ObjectEx {
 							layoutModule.setDescription(desc);
 						}
 					} catch (final Exception ex) {
-						log.warn(ex);
+						getLog().warn(ex);
 					}
 				}
 				factory.registered(layoutModule);
