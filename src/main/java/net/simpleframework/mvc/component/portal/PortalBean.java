@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.simpleframework.common.StringUtils;
+import net.simpleframework.ctx.common.xml.XmlElement;
 import net.simpleframework.mvc.component.AbstractContainerBean;
 import net.simpleframework.mvc.component.portal.module.PortalModuleRegistryFactory;
 
@@ -46,6 +47,15 @@ public class PortalBean extends AbstractContainerBean {
 
 	public void setShowMenu(final boolean showMenu) {
 		this.showMenu = showMenu;
+	}
+
+	@Override
+	public XmlElement getElement() {
+		XmlElement element = super.getElement();
+		if (element == null) {
+			setElement(element = getPageDocument().getRoot());
+		}
+		return element;
 	}
 
 	@Override
