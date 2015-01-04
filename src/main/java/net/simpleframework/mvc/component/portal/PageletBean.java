@@ -144,15 +144,11 @@ public class PageletBean extends AbstractElementBean {
 		return false;
 	}
 
-	public PortalModule getModuleBean() {
-		return PortalModuleRegistryFactory.get().getModule(getModule());
-	}
-
 	private IPortalModuleHandler layoutModuleHandle;
 
 	public IPortalModuleHandler getModuleHandler() {
 		if (layoutModuleHandle == null) {
-			final PortalModule moduleBean = getModuleBean();
+			final PortalModule moduleBean = PortalModuleRegistryFactory.get().getModule(getModule());
 			if (moduleBean == null) {
 				return null;
 			}
@@ -163,6 +159,11 @@ public class PageletBean extends AbstractElementBean {
 			}
 		}
 		return layoutModuleHandle;
+	}
+
+	@Override
+	protected boolean syncElement_exclude(final Object o) {
+		return super.syncElement_exclude(o) || o instanceof IPortalModuleHandler;
 	}
 
 	private String id;

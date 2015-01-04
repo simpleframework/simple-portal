@@ -31,7 +31,13 @@ public class OptionWindowUI {
 	private int height, width;
 
 	public String getTitle() {
-		return StringUtils.hasText(title) ? title : pagelet.getModuleBean().getText();
+		if (StringUtils.hasText(title)) {
+			return title;
+		} else {
+			final PortalModule pModule = PortalModuleRegistryFactory.get().getModule(
+					pagelet.getModule());
+			return pModule != null ? pModule.getText() : null;
+		}
 	}
 
 	public int getHeight() {

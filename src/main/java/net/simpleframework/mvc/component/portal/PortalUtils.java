@@ -179,7 +179,8 @@ public abstract class PortalUtils implements IMVCContextVar {
 		if (StringUtils.hasText(value)) {
 			titleValue = value;
 		} else {
-			final PortalModule moduleBean = pagelet.getModuleBean();
+			final PortalModule moduleBean = PortalModuleRegistryFactory.get().getModule(
+					pagelet.getModule());
 			if (moduleBean != null) {
 				final String text = moduleBean.getText();
 				if (StringUtils.hasText(text)) {
