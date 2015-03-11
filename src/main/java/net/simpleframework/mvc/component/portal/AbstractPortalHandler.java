@@ -3,7 +3,7 @@ package net.simpleframework.mvc.component.portal;
 import java.util.Map;
 
 import net.simpleframework.common.coll.KVMap;
-import net.simpleframework.ctx.permission.IPermissionConst;
+import net.simpleframework.ctx.permission.PermissionConst;
 import net.simpleframework.mvc.component.AbstractComponentHandler;
 import net.simpleframework.mvc.component.ComponentParameter;
 
@@ -19,7 +19,7 @@ public abstract class AbstractPortalHandler extends AbstractComponentHandler imp
 	@Override
 	public Object getBeanProperty(final ComponentParameter cp, final String beanProperty) {
 		if ("roleManager".equals(beanProperty)) {
-			return IPermissionConst.ROLE_MANAGER;
+			return PermissionConst.ROLE_MANAGER;
 		}
 		return super.getBeanProperty(cp, beanProperty);
 	}
