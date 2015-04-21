@@ -51,7 +51,7 @@ public abstract class PortalUtils implements IMVCContextVar {
 
 	static boolean isManager(final ComponentParameter cp) {
 		return (Boolean) cp.getBeanProperty("showMenu")
-				|| mvcContext.getPermission().getLogin(cp).isMember(cp.getBeanProperty("roleManager"));
+				|| cp.isLmember(cp.getBeanProperty("roleManager"));
 	}
 
 	public static String renderHtml(final ComponentParameter cp) throws Exception {
