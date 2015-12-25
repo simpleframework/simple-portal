@@ -205,8 +205,8 @@ public abstract class PortalUtils implements IMVCContextVar {
 			sb.append("<td class=\"title\">");
 			final String link = pageletTitle.getLink();
 			if (StringUtils.hasText(link)) {
-				sb.append(new LinkElement(titleValue).setHref(link)
-						.addStyle(pageletTitle.getFontStyle()).setTarget("_blank"));
+				sb.append(LinkElement.BLANK(titleValue).setHref(link)
+						.addStyle(pageletTitle.getFontStyle()));
 			} else {
 				sb.append("<span");
 				final String fontStyle = pageletTitle.getFontStyle();
