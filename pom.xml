@@ -15,7 +15,6 @@
     <dependency>
       <groupId>net.simpleframework</groupId>
       <artifactId>simple-mvc-impl</artifactId>
-      <version>${simple.mvc.impl}</version>
     </dependency>
 
     <!-- web容器包 -->
