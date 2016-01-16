@@ -69,7 +69,7 @@ public class PortalBean extends AbstractContainerBean {
 	}
 
 	public String getRoleManager() {
-		return StringUtils.hasText(roleManager) ? roleManager : settings.getDefaultRole();
+		return StringUtils.hasText(roleManager) ? roleManager : mvcSettings.getDefaultRole();
 	}
 
 	public void setRoleManager(final String roleManager) {

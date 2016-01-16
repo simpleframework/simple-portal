@@ -16,7 +16,6 @@ import net.simpleframework.common.web.HttpUtils;
 import net.simpleframework.common.web.html.HtmlConst;
 import net.simpleframework.common.web.html.HtmlUtils;
 import net.simpleframework.mvc.IForward;
-import net.simpleframework.mvc.IMVCContextVar;
 import net.simpleframework.mvc.PageRequestResponse;
 import net.simpleframework.mvc.UrlForward;
 import net.simpleframework.mvc.common.element.LinkElement;
@@ -34,7 +33,7 @@ import net.simpleframework.mvc.component.portal.module.PortalModuleRegistryFacto
  * @author 陈侃(cknet@126.com, 13910090885) https://github.com/simpleframework
  *         http://www.simpleframework.net
  */
-public abstract class PortalUtils implements IMVCContextVar {
+public abstract class PortalUtils {
 	static Log log = LogFactory.getLogger(PortalUtils.class);
 
 	static Collection<ColumnBean> getColumns(final ComponentParameter cp) {
