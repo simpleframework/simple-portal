@@ -190,7 +190,7 @@ public abstract class RssUtils {
 				final Date pubDate = item.getPubDate();
 				if (pubDate != null) {
 					sb.append("<span class='pubDate'> - ")
-							.append(Convert.toDateString(item.getPubDate())).append("</span>");
+							.append(Convert.toDateTimeString(item.getPubDate())).append("</span>");
 				}
 				sb.append("<div class='desc'>").append(item.getDescription());
 				sb.append("</div>");
