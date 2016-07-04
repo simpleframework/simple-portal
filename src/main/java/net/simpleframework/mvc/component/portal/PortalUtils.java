@@ -232,8 +232,8 @@ public abstract class PortalUtils {
 	private static String wrapRound(final ComponentParameter cp, final String s) {
 		final StringBuilder sb = new StringBuilder();
 		sb.append("<div class=\"jbox\">");
-		final Float ver = cp.getIEVersion();
-		final boolean j = ver != null && ver == 8.0;
+		final Boolean ie = cp.isIE8("=");
+		final boolean j = ie != null && ie;
 		if (j) {
 			sb.append("<div class=\"j1\"></div><div class=\"j2\"></div>");
 		}
