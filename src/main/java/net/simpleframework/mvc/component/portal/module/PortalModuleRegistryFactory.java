@@ -128,8 +128,8 @@ public class PortalModuleRegistryFactory extends ObjectEx {
 	public static void registered(final Class<? extends AbstractPortalModuleHandler> clazz,
 			final String name, final String text, final String catalog, final String icon,
 			final String description) {
-		PortalModuleRegistryFactory.get().registered(
-				new PortalModule().setHandlerClass(clazz.getName()).setCatalog(catalog).setIcon(icon)
-						.setText(text).setName(name).setDescription(description));
+		PortalModuleRegistryFactory.get()
+				.registered(new PortalModule().setHandlerClass(clazz.getName()).setCatalog(catalog)
+						.setIcon(icon).setText(text).setName(name).setDescription(description));
 	}
 }

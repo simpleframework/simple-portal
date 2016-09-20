@@ -11,7 +11,8 @@ import net.simpleframework.mvc.component.portal.PageletBean;
  *         http://www.simpleframework.net
  */
 public class OptionWindowUI {
-	public static OptionWindowUI getOptionWindowUI(final PageletBean pagelet, final String uiString) {
+	public static OptionWindowUI getOptionWindowUI(final PageletBean pagelet,
+			final String uiString) {
 		final OptionWindowUI optionWindowUI = new OptionWindowUI(pagelet);
 		final String[] arr = StringUtils.split(uiString, ";");
 		optionWindowUI.title = arr[0].substring(6);
@@ -34,8 +35,8 @@ public class OptionWindowUI {
 		if (StringUtils.hasText(title)) {
 			return title;
 		} else {
-			final PortalModule pModule = PortalModuleRegistryFactory.get().getModule(
-					pagelet.getModule());
+			final PortalModule pModule = PortalModuleRegistryFactory.get()
+					.getModule(pagelet.getModule());
 			return pModule != null ? pModule.getText() : null;
 		}
 	}

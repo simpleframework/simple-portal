@@ -21,8 +21,8 @@ public class PortalEditPageLoad extends DefaultPageHandler {
 
 	public void optionLoaded(final PageParameter pp, final Map<String, Object> dataBinding,
 			final PageSelector selector) throws Exception {
-		final IPortalModuleHandler mh = PortalModuleRegistryFactory.get().getModuleHandler(
-				PortalUtils.getPageletBean(pp));
+		final IPortalModuleHandler mh = PortalModuleRegistryFactory.get()
+				.getModuleHandler(PortalUtils.getPageletBean(pp));
 		if (mh != null) {
 			mh.optionLoaded(pp, dataBinding);
 		}
@@ -41,8 +41,8 @@ public class PortalEditPageLoad extends DefaultPageHandler {
 			dataBinding.put("ui_options_link", title.getLink());
 			final String icon = title.getIcon();
 			if (StringUtils.hasText(icon)) {
-				dataBinding.put("__homepath", ComponentUtils.getResourceHomePath(PortalBean.class)
-						+ "/jsp/icons/");
+				dataBinding.put("__homepath",
+						ComponentUtils.getResourceHomePath(PortalBean.class) + "/jsp/icons/");
 				dataBinding.put("ui_options_icon", icon);
 			}
 			final String f = title.getFontStyle();

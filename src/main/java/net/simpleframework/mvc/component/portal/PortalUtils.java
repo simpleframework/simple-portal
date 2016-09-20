@@ -178,8 +178,8 @@ public abstract class PortalUtils {
 		if (StringUtils.hasText(value)) {
 			titleValue = value;
 		} else {
-			final PortalModule moduleBean = PortalModuleRegistryFactory.get().getModule(
-					pagelet.getModule());
+			final PortalModule moduleBean = PortalModuleRegistryFactory.get()
+					.getModule(pagelet.getModule());
 			if (moduleBean != null) {
 				final String text = moduleBean.getText();
 				if (StringUtils.hasText(text)) {
@@ -249,7 +249,8 @@ public abstract class PortalUtils {
 		savePortal(cp, null);
 	}
 
-	public static void savePortal(final ComponentParameter cp, final Collection<ColumnBean> columns) {
+	public static void savePortal(final ComponentParameter cp,
+			final Collection<ColumnBean> columns) {
 		savePortal(cp, columns, (Boolean) cp.getBeanProperty("draggable"));
 	}
 
@@ -265,7 +266,8 @@ public abstract class PortalUtils {
 		lh.updatePortal(cp, columns, draggable);
 	}
 
-	public static ColumnBean getColumnBeanByHashId(final ComponentParameter cp, final String hashId) {
+	public static ColumnBean getColumnBeanByHashId(final ComponentParameter cp,
+			final String hashId) {
 		if (hashId != null) {
 			for (final ColumnBean column : getColumns(cp)) {
 				if (hashId.equals(column.id())) {

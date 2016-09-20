@@ -167,7 +167,8 @@ public abstract class RssUtils {
 					sb.append("</li>");
 				}
 				sb.append("</ul><div class=\"rss_more\">");
-				sb.append("<a onclick=\"$Actions['rssContentWindow'](_lo_getPagelet(this).params);\">#(RssUtils.0)&raquo;</a>");
+				sb.append(
+						"<a onclick=\"$Actions['rssContentWindow'](_lo_getPagelet(this).params);\">#(RssUtils.0)&raquo;</a>");
 				sb.append("</div>");
 			}
 		} catch (final Exception e) {
@@ -198,8 +199,8 @@ public abstract class RssUtils {
 				sb.append("</div>");
 				sb.append("<div class='portal_rss_line'></div>");
 			}
-			sb.append(JavascriptUtils
-					.wrapScriptTag("$Actions['rssContentWindow'].window.setHeader('RSS - "
+			sb.append(
+					JavascriptUtils.wrapScriptTag("$Actions['rssContentWindow'].window.setHeader('RSS - "
 							+ channel.getTitle() + "');"));
 		}
 		return sb.toString();

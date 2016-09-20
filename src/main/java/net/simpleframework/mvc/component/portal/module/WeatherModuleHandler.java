@@ -65,8 +65,8 @@ public class WeatherModuleHandler extends AbstractPortalModuleHandler {
 		} else {
 			final String imgPath = ComponentUtils.getCssResourceHomePath(cp) + "/images/yahoo/";
 			String text, image;
-			Date date = new SimpleDateFormat(YahooWeatherUtils.RFC822_MASKS[1], Locale.US).parse(ele
-					.attributeValue("date"));
+			Date date = new SimpleDateFormat(YahooWeatherUtils.RFC822_MASKS[1], Locale.US)
+					.parse(ele.attributeValue("date"));
 			final int temp = Integer.parseInt(ele.attributeValue("temp"));
 			int code = Integer.valueOf(ele.attributeValue("code")).intValue();
 			if (code == 3200) {

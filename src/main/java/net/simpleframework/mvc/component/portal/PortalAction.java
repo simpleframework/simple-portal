@@ -161,8 +161,8 @@ public class PortalAction extends DefaultAjaxRequestHandler {
 		}
 
 		PortalUtils.savePortal(nCP, columns);
-		return new JavascriptForward("$Actions['").append(nCP.getComponentName()).append(
-				"'].refresh(); $Actions['layoutColumnsWindow'].close();");
+		return new JavascriptForward("$Actions['").append(nCP.getComponentName())
+				.append("'].refresh(); $Actions['layoutColumnsWindow'].close();");
 	}
 
 	public IForward positionSave(final ComponentParameter cp) {
