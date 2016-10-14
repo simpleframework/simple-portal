@@ -60,6 +60,8 @@ public class PortalModuleRegistryFactory extends ObjectEx {
 	}
 
 	static class ModuleDocument extends XmlDocument {
+		private static final long serialVersionUID = -5414498302590742359L;
+
 		protected ModuleDocument(final InputStream inputStream,
 				final PortalModuleRegistryFactory factory) {
 			super(inputStream);
