@@ -69,7 +69,7 @@ public abstract class RssUtils {
 
 		public Collection<RssChannelItem> getChannelItems() {
 			if (channelItems == null) {
-				channelItems = new ArrayList<RssChannelItem>();
+				channelItems = new ArrayList<>();
 			}
 			return channelItems;
 		}

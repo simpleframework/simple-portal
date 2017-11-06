@@ -56,7 +56,7 @@ public class PortalRegistry extends AbstractComponentRegistry {
 
 	public List<ColumnBean> loadBean(final PortalBean portalBean, final IScriptEval scriptEval,
 			final XmlElement element) {
-		final ArrayList<ColumnBean> al = new ArrayList<ColumnBean>();
+		final ArrayList<ColumnBean> al = new ArrayList<>();
 		final Iterator<?> it = element.elementIterator("column");
 		while (it.hasNext()) {
 			final XmlElement ele = (XmlElement) it.next();

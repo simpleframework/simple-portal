@@ -90,7 +90,7 @@ public class PortalModuleRegistryFactory extends ObjectEx {
 		}
 	}
 
-	private final Map<String, Collection<PortalModule>> layoutModules = new LinkedHashMap<String, Collection<PortalModule>>();
+	private final Map<String, Collection<PortalModule>> layoutModules = new LinkedHashMap<>();
 
 	public PortalModule getModule(final String name) {
 		if (StringUtils.hasText(name)) {
@@ -114,7 +114,7 @@ public class PortalModuleRegistryFactory extends ObjectEx {
 			final String catalog = layoutModule.getCatalog();
 			Collection<PortalModule> coll = layoutModules.get(catalog);
 			if (coll == null) {
-				layoutModules.put(catalog, coll = new ArrayList<PortalModule>());
+				layoutModules.put(catalog, coll = new ArrayList<>());
 			}
 			coll.add(layoutModule);
 		}

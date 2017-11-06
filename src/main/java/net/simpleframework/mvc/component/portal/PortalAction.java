@@ -133,8 +133,8 @@ public class PortalAction extends DefaultAjaxRequestHandler {
 	public IForward columnSizeSave(final ComponentParameter cp) {
 		final ComponentParameter nCP = PortalUtils.get(cp);
 		final int columnCount = Convert.toInt(nCP.getParameter("_columns_select"), 1);
-		final ArrayList<ColumnBean> columns = new ArrayList<ColumnBean>(PortalUtils.getColumns(nCP));
-		final ArrayList<PageletBean> removes = new ArrayList<PageletBean>();
+		final ArrayList<ColumnBean> columns = new ArrayList<>(PortalUtils.getColumns(nCP));
+		final ArrayList<PageletBean> removes = new ArrayList<>();
 		int size;
 		XmlElement element = null;
 		while ((size = columns.size()) != columnCount) {
@@ -167,11 +167,11 @@ public class PortalAction extends DefaultAjaxRequestHandler {
 
 	public IForward positionSave(final ComponentParameter cp) {
 		final ComponentParameter nCP = PortalUtils.get(cp);
-		final ArrayList<ColumnBean> columns = new ArrayList<ColumnBean>();
-		final Map<ColumnBean, Collection<PageletBean>> pagelets = new HashMap<ColumnBean, Collection<PageletBean>>();
+		final ArrayList<ColumnBean> columns = new ArrayList<>();
+		final Map<ColumnBean, Collection<PageletBean>> pagelets = new HashMap<>();
 		for (final String ul : StringUtils.split(cp.getParameter("ul"), "#")) {
 			final ColumnBean column = PortalUtils.getColumnBeanByHashId(nCP, ul);
-			final Collection<PageletBean> coll = new ArrayList<PageletBean>();
+			final Collection<PageletBean> coll = new ArrayList<>();
 			pagelets.put(column, coll);
 			for (final String li : StringUtils.split(cp.getParameter(ul), "#")) {
 				final PageletBean pagelet = PortalUtils.getPageletByHashId(nCP, li);
@@ -213,7 +213,7 @@ public class PortalAction extends DefaultAjaxRequestHandler {
 			column = pagelet.getColumnBean();
 		}
 		final Collection<PageletBean> pagelets = column.getPagelets();
-		final ArrayList<PageletBean> al = new ArrayList<PageletBean>(pagelets);
+		final ArrayList<PageletBean> al = new ArrayList<>(pagelets);
 		final int j = pagelet != null ? al.indexOf(pagelet) : -1;
 		final PageletBean created = new PageletBean(column);
 		created.setModule(nCP.getParameter("module"));

@@ -29,7 +29,7 @@ public class PortalBean extends AbstractContainerBean {
 
 	public List<ColumnBean> getColumns() {
 		if (columns == null) {
-			columns = new ArrayList<ColumnBean>();
+			columns = new ArrayList<>();
 		}
 		return columns;
 	}

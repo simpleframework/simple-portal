@@ -44,7 +44,7 @@ public class ColumnBean extends AbstractElementBean {
 
 	public ArrayList<PageletBean> getPagelets() {
 		if (pagelets == null) {
-			pagelets = new ArrayList<PageletBean>();
+			pagelets = new ArrayList<>();
 		}
 		return pagelets;
 	}
